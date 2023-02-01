@@ -8,7 +8,7 @@ spec:
   source:
     chart: ingress-nginx
     repoURL: 'https://kubernetes.github.io/ingress-nginx'
-    targetRevision: {{ .Values.ingress-nginx.version | default "4.4.2" }}
+    targetRevision: {{ .Values.ingressNginx.version | default "4.4.2" }}
     helm:
         releaseName: ingress-nginx
   destination:
