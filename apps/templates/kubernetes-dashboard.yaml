@@ -11,6 +11,12 @@ spec:
     targetRevision: {{ .Values.kubernetesDashboard.version | default "6.0.0" }}
     helm:
         releaseName: kubernetes-dashboard
+        values: |
+          ingress: 
+            enabled: true
+            classname: ingress-nginx
+            hosts:
+              - k8s-dashboard.local.io
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: kubernetes-dashboard
