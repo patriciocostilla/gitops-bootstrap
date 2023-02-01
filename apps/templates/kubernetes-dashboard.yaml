@@ -14,7 +14,7 @@ spec:
         values: |
           ingress: 
             enabled: true
-            classname: ingress-nginx
+            classname: nginx
             hosts:
               - k8s-dashboard.local.io
   destination:
