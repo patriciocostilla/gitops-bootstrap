@@ -20,6 +20,10 @@ spec:
             config:
               enable-modsecurity: "true"
               enable-owasp-modsecurity-crs: "true"
+              modsecurity-snippet: |
+                SecAuditLog /dev/stdout
+                SecAuditLogFormat JSON
+                SecAuditEngine On  
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ingress-nginx
