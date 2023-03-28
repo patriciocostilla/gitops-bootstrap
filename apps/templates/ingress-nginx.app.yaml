@@ -21,6 +21,7 @@ spec:
               enable-modsecurity: "true"
               enable-owasp-modsecurity-crs: "true"
               modsecurity-snippet: |
+                SecRuleEngine On
                 SecAuditLog /dev/stdout
                 SecAuditLogFormat JSON
                 SecAuditEngine On  
