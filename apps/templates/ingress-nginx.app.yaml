@@ -18,8 +18,8 @@ spec:
             extraArgs:
               enable-ssl-passthrough: true
             config:
-              enable-modsecurity: "false"
-              enable-owasp-modsecurity-crs: "false"
+              enable-modsecurity: "true"
+              enable-owasp-modsecurity-crs: "true"
               modsecurity-snippet: |
                 SecRuleEngine On
                 SecAuditLog /dev/stdout
