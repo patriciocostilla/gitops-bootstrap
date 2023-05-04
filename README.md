@@ -2,6 +2,15 @@
 
 # Installation Steps
 
+## Set up local DNS
+
+To access ArgoCD UI and K8S Dashboard UI, you will need to setup a local DNS using your machine hosts file. Add the two following records:
+
+```sh
+argocd.local.io 127.0.0.1
+k8s-dashboard.local.io 127.0.0.1
+```
+
 ## Install ArgoCD
 
 [source](https://argo-cd.readthedocs.io/en/stable/getting_started/)
@@ -62,4 +71,27 @@ argocd repo add git@github.com:patriciocostilla/gitops-bootstrap.git --ssh-priva
 
 ```sh
 kubectl apply -f apps.app.yaml
+```
+
+# Access ArgoCD Web UI
+
+https://argocd.local.io
+
+Use the same username/password from before.
+
+# Access K8S Dashboard
+
+https://k8s-dashboard.local.io
+
+See steps below to generate auth token.
+
+## Generate a cluster admin user
+```sh
+kubectl apply -f cluster-admin-user/cluster-admin-user.yaml
+```
+
+## Generate access token to admin user
+
+```sh
+kubectl -n kube-system create token cluster-admin-user
 ```
