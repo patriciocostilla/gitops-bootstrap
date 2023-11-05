@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-ingress
+  name: apps
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -9,10 +9,11 @@ spec:
   project: default
   source:
     repoURL: 'git@github.com:patriciocostilla/gitops-bootstrap.git'
-    path: argocd-ingress
+    path: cluster-core-services
     targetRevision: main
   destination:
     server: 'https://kubernetes.default.svc'
+    namespace: cluster-core-services
   syncPolicy:
     automated:
       prune: true

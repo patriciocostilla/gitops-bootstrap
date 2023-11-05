@@ -70,7 +70,7 @@ argocd repo add git@github.com:patriciocostilla/gitops-bootstrap.git --ssh-priva
 ## Install App of Apps
 
 ```sh
-kubectl apply -f apps.app.yaml
+kubectl apply -f cluster-core-services.app.yaml
 ```
 
 # Access ArgoCD Web UI
